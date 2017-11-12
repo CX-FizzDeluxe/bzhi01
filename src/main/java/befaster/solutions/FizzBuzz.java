@@ -6,7 +6,7 @@ public class FizzBuzz {
 
     public static String fizzBuzz(Integer number) {
     	
-    	if ((number % 3 == 0 || String.valueOf(number).contains("3")) && (number % 5 == 0 || String.valueOf(number).contains("5")) && (number > 10 && checkForIdentical(number)))  {
+    	if ((number % 3 == 0 || String.valueOf(number).contains("3")) && (number % 5 == 0 || String.valueOf(number).contains("5")) && ((number % 3 == 0 && String.valueOf(number).contains("3")) || (number % 5 == 0 && String.valueOf(number).contains("5"))))  {
         	if (number % 2 == 0) {
         		return "fizz buzz deluxe";
         	}
@@ -18,7 +18,7 @@ public class FizzBuzz {
         	return "fizz buzz";
         }
 
-        else if ((number % 3 == 0 || String.valueOf(number).contains("3")) && (number > 10 && checkForIdentical(number))) {
+        else if ((number % 3 == 0 && String.valueOf(number).contains("3"))) {
         	if (number % 2 == 0) {
         		return "fizz deluxe";
         	}
@@ -26,7 +26,7 @@ public class FizzBuzz {
         		return "fizz fake deluxe";
         	}
         }
-        else if ((number % 5 == 0 || String.valueOf(number).contains("5"))  && (number > 10 && checkForIdentical(number))){
+        else if ((number % 5 == 0 && String.valueOf(number).contains("5"))){
         	if (number % 2 == 0) {
         		return "buzz deluxe";
         	}
