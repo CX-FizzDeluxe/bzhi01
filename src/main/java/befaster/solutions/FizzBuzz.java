@@ -12,8 +12,12 @@ public class FizzBuzz {
     	else if ((number % 3 == 0 || String.valueOf(number).contains("3")) && (number % 5 == 0 || String.valueOf(number).contains("5")))  {
         	return "fizz buzz";
         }
-        else if (number > 10 && checkForIdentical(number)) {
-        	return "deluxe";
+
+        else if ((number % 3 == 0 || String.valueOf(number).contains("3")) && (number > 10 && checkForIdentical(number))) {
+        	return "fizz deluxe";
+        }
+        else if ((number % 5 == 0 || String.valueOf(number).contains("5"))  && (number > 10 && checkForIdentical(number))){
+        	return "buzz deluxe";
         }
         else if (number % 3 == 0 || String.valueOf(number).contains("3"))  {
         	return "fizz";
@@ -21,7 +25,9 @@ public class FizzBuzz {
         else if (number % 5 == 0 || String.valueOf(number).contains("5")) {
         	return "buzz";
         }
-    	
+        else if (number > 10 && checkForIdentical(number)) {
+        	return "deluxe";
+        }
         else {
         	return "" + number;
         }
